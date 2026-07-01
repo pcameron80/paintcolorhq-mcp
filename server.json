@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pcameron80/paintcolorhq-mcp",
+  "title": "PaintColorHQ Color Match",
+  "description": "Closest real, purchasable paint colors across 13 brands for any hex value, scored with CIEDE2000.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/pcameron80/paintcolorhq-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.paintcolorhq.com/api/mcp"
+    }
+  ]
+}
