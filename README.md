@@ -10,7 +10,30 @@ https://www.paintcolorhq.com/api/mcp
 
 Transport: stateless **Streamable HTTP**. Auth: none.
 
-## Tool
+## Tools
+
+Three tools. An agent holding a color name calls `find_paint_color` for its hex, then `match_paint_color` for the equivalents in other brands.
+
+### `find_paint_color`
+
+Look up a paint color by name, number or both, optionally with the brand in the query.
+
+| Argument | Required | Description |
+|----------|----------|-------------|
+| `query` | yes | Name and/or number, e.g. `Agreeable Gray`, `SW 7029`, `HC-154`, `Repose Gray sherwin williams`. |
+| `brand` | no | Restrict to one brand slug from `list_brands`. |
+| `limit` | no | Number of colors, 1–10 (default 5). |
+
+Returns brand, color name, color number, hex, availability (current, retired or discontinued) and a link to the color's page.
+
+```
+find_paint_color { "query": "SW 7029" }
+→ 1. Agreeable Gray — Sherwin-Williams 7029 (#d1cbc1)
+```
+
+### `list_brands`
+
+No arguments. The 13 brands with the slug the other tools take, the brand name and its number of colors.
 
 ### `match_paint_color`
 
